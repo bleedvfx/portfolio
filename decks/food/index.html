@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="referrer" content="no-referrer">
+<title>Bleed VFX — Food</title>
+<style>
+:root{--bg:#F4F4F4;--gap:12px;--pad:clamp(8px,2vw,24px)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg)}
+#grid{padding:var(--pad)}
+.row{display:flex;gap:var(--gap);margin-bottom:var(--gap);justify-content:center}
+.it{position:relative;display:block;flex:none;overflow:hidden;border-radius:4px;background:#e4e4e4}
+.it img,.it video{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .3s}
+@media (hover:hover){a.it:hover img,a.it:hover video{transform:scale(1.03)}}
+@media (prefers-reduced-motion:reduce){.it img,.it video{transition:none}}
+</style>
+</head>
+<body>
+<div id="grid"></div>
+<script>
+// Dónde viven los archivos. Versión final: 'https://bleedvfx.github.io/'
+const BASE = 'https://bleedvfx.github.io/';
+// Cada pieza: ps = imagen de espera propia del deck (si el repo no la tiene), p = archivo (repo/carpeta/archivo), w/h = resolución nativa, v = es video, u = case en la web (si tiene)
+const ITEMS = [{"p": "web/reeses_puffs/step_and_repeat_dirstcut.mp4", "w": 1280, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/dove_stick/dove_004.jpg", "w": 1920, "h": 990, "v": false, "u": "https://www.bleedvfx.com/dovestick"}, {"p": "portfolio/media/milk_shots/milkshots_001_milkswirl_002.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/milk_shots__milkshots_001_milkswirl_002.jpg"}, {"p": "web/reeses_puffs/looping_swirl.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/walls_doodles/walls_thumbnail_1920x1080_0000.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/danone/danone_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/danone__danone_clip01.jpg"}, {"p": "portfolio/media/milk_shots/milkshots_001_milkswirl_001.mp4", "w": 1280, "h": 726, "v": true, "ps": "posters/milk_shots__milkshots_001_milkswirl_001.jpg"}, {"p": "web/dove_stick/dove_003_square.jpg", "w": 1080, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/dovestick"}, {"p": "web/walls_doodles/PH_Boom_Boom_v04_02_0080_edited.jpg", "w": 2134, "h": 2160, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/reeses_puffs/swirl_03_007_0000.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/walls_doodles/Ph-Boom-Boom-V04.mp4", "w": 1280, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/reeses_puffs/F21_MoreYes_ANM_TB_Box_16_9_H264_ReesesPuffs_ENG.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/walls_doodles/Walls_KV_04_op01_icecream01_edited.jpg", "w": 1675, "h": 3000, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/cofler_alfablock/clip01.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "web/reeses_puffs/RP_STC_CBS_FULL.jpg", "w": 3665, "h": 2289, "v": false, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "portfolio/media/quaker_08-06-20/quaker_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/quaker_08-06-20__quaker_clip01.jpg"}, {"p": "web/walls_doodles/PH_Boom_Boom_v04_0071_edited.jpg", "w": 645, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/dove_stick/dove_001.jpg", "w": 1496, "h": 1620, "v": false, "u": "https://www.bleedvfx.com/dovestick"}, {"p": "web/cofler_alfablock/alfablock_thumbnail_1920x1080_02.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "web/reeses_puffs/F21_MoreYes_VDO_B2B_9_16_H264_ReesesPuffs_ENG.mp4", "w": 720, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/walls_doodles/Solero_orange.mp4", "w": 1280, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/danone_cachaca/danone_cachaca_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/danone_cachaca__danone_cachaca_clip01.jpg"}, {"p": "web/reeses_puffs/pixel_stretch_003_0029.jpg", "w": 1329, "h": 999, "v": false, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/cofler_alfablock/clip02.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "web/walls_doodles/Nogger_v04_0000.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/reeses_puffs/F21_MoreYes_VDO_SUN_1_1_H264_ReesesPuffs_ENG.mp4", "w": 1280, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/walls_doodles/WALLS_sh_watermelon_v5.002_02.jpg", "w": 1920, "h": 1920, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/cofler_rellenos/Sh 030 003_encoded.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/cofler_rellenos__Sh_030_003_encoded.jpg"}, {"p": "web/reeses_puffs/reeses_puffs_colors.jpg", "w": 1938, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "portfolio/media/lipton_04-04-23/01 - kaleidoscope_v1.006_colorop03_feed.jpg", "w": 1080, "h": 1350, "v": false}, {"p": "portfolio/media/dutchlady/dutchlady_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/dutchlady__dutchlady_clip01.jpg"}, {"p": "web/walls_doodles/Walls_KV_04_op01_icecream02.jpg", "w": 3500, "h": 3500, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/cofler_alfablock/chocolate_bar_alfajor.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "portfolio/media/chokis/chokis_thumbnail_1920x1080_web.jpg", "w": 1920, "h": 1080, "v": false}, {"p": "web/walls_doodles/Walls_KV_04_op01_icecream03_edited.jpg", "w": 1069, "h": 2174, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/corona_07-07-25/CORONA_sh010_v1.008_color01_encoded.mp4", "w": 1000, "h": 1000, "v": true, "ps": "posters/corona_07-07-25__CORONA_sh010_v1.008_color01_encoded.jpg"}, {"p": "web/walls_doodles/Walls_TK_BoomBoom_1-1_edited.jpg", "w": 1920, "h": 1920, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/cofler_alfablock/clip04.mp4", "w": 1080, "h": 972, "v": true, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "web/walls_doodles/walls_sh_watermelon_v3_edited_edited.jpg", "w": 1455, "h": 2751, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/cofler_rellenos/sh_050_005_encoded.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/cofler_rellenos__sh_050_005_encoded.jpg"}, {"p": "web/reeses_puffs/thumbs_up.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "portfolio/media/chocolate_swirl/chocolate_swirl.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/chocolate_swirl__chocolate_swirl.jpg"}, {"p": "portfolio/media/aquafina/aquafina_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/aquafina__aquafina_clip01.jpg"}];
+
+const grid = document.getElementById('grid');
+const io = ('IntersectionObserver' in window) ? new IntersectionObserver(es=>es.forEach(e=>{
+  const v=e.target; if(e.isIntersecting){ if(!v.src) v.src=v.dataset.src; v.play().catch(()=>{}); } else v.pause();
+}),{rootMargin:'300px 0px'}) : null;
+
+// Crear cada pieza una sola vez
+const els = ITEMS.map(it=>{
+  const a=document.createElement(it.u?'a':'div'); a.className='it';
+  if(it.u){ a.href=it.u; a.target='_blank'; a.rel='noopener'; } else a.classList.add('nolink');
+  const url=BASE+encodeURI(it.p);
+  let m;
+  if(it.v){ m=document.createElement('video'); m.muted=true; m.loop=true; m.playsInline=true;
+    m.setAttribute('muted',''); m.setAttribute('playsinline',''); m.preload='none';
+    m.poster=it.ps||url.replace(/\.mp4$/,'_firstframe.jpg'); m.dataset.src=url;
+    if(io) io.observe(m); else { m.src=m.dataset.src; m.autoplay=true; } }
+  else { m=document.createElement('img'); m.loading='lazy'; m.decoding='async'; m.alt=''; m.src=url; }
+  a.appendChild(m); return a;
+});
+
+// Grilla justificada: filas de alto parejo que llenan el ancho.
+// Tope: ninguna pieza se muestra a más de MAX_SCALE de su resolución nativa.
+const MAX_SCALE = 1.25;
+const MOBILE = 600;            // por debajo de este ancho: una pieza por fila
+function targetH(W){ return W<1000 ? 360 : Math.min(W*0.36, 640); }
+function layout(){
+  const cs=getComputedStyle(grid);
+  const W=grid.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+  const gap=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--gap'))||12;
+  const T=targetH(W);
+  const frag=document.createDocumentFragment();
+  let row=[], sumA=0;
+  const flush=(last)=>{
+    if(!row.length) return;
+    const free=W-gap*(row.length-1);
+    let h = last ? Math.min(T, free/sumA) : free/sumA;
+    const maxH=Math.min(...row.map(i=>ITEMS[i].h))*MAX_SCALE;   // tope de escala
+    h=Math.min(h,maxH);
+    const r=document.createElement('div'); r.className='row';
+    row.forEach(i=>{ const it=ITEMS[i], e=els[i];
+      e.style.width=Math.floor(h*it.w/it.h)+'px'; e.style.height=Math.floor(h)+'px'; r.appendChild(e); });
+    frag.appendChild(r); row=[]; sumA=0;
+  };
+  ITEMS.forEach((it,i)=>{
+    row.push(i); sumA+=it.w/it.h;
+    if(W<MOBILE || (W-gap*(row.length-1))/sumA <= T) flush(false);
+  });
+  flush(true);
+  grid.replaceChildren(frag);
+}
+let t; addEventListener('resize',()=>{ clearTimeout(t); t=setTimeout(layout,120); });
+layout();
+</script>
+</body>
+</html>
