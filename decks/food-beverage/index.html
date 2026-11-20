@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="referrer" content="no-referrer">
+<title>Bleed VFX — Food</title>
+<style>
+:root{--bg:#F4F4F4;--gap:12px;--pad:clamp(8px,2vw,24px)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg)}
+#grid{padding:var(--pad)}
+.row{display:flex;gap:var(--gap);margin-bottom:var(--gap);justify-content:center}
+.it{position:relative;display:block;flex:none;overflow:hidden;border-radius:4px;background:#e4e4e4}
+.it img,.it video{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .3s}
+@media (hover:hover){a.it:hover img,a.it:hover video{transform:scale(1.03)}}
+@media (prefers-reduced-motion:reduce){.it img,.it video{transition:none}}
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&family=Mulish:wght@700&display=swap');
+:root{--ink:#000;--soft:#3D3D3D;--title:"Avenir","Avenir Next","Mulish",sans-serif;--sans:"Assistant",sans-serif}
+.hdr{position:relative;overflow:hidden;height:clamp(64px,8.5vw,110px);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(16px,2.7vw,40px);
+  background:linear-gradient(90deg,#9db3d2 0%,#a49bcd 45%,#c4a8d8 75%,#e2cdea 100%)}
+.hdr video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hdr>*{position:relative;z-index:1}
+.brand{display:flex;align-items:center;gap:clamp(8px,1.3vw,18px);text-decoration:none;color:var(--ink);min-width:0}
+.logo{height:clamp(24px,3.4vw,46px);width:auto;fill:var(--ink);display:block;flex:none}
+.rot{position:relative;height:1.2em;width:clamp(150px,22vw,300px);font-family:var(--sans);font-weight:400;font-size:clamp(12px,1.2vw,17px);color:var(--soft);line-height:1.2}
+.rot.off{visibility:hidden}
+.rot span{position:absolute;left:0;top:0;white-space:nowrap;opacity:0;animation:cycle 42s infinite}
+@keyframes cycle{0%{opacity:0}1.71%{opacity:1}5.36%{opacity:1}7.14%{opacity:0}100%{opacity:0}}
+.contact{font-family:var(--sans);font-size:clamp(12px,1.15vw,17px);color:var(--ink);text-align:right}
+.contact a{font-weight:600;text-decoration:none;color:var(--ink);margin-left:.4em;white-space:nowrap}
+.intro{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(24px,5vw,90px);max-width:1500px;margin:0 auto;padding:clamp(48px,7vw,120px) clamp(20px,6vw,110px)}
+.ttl{justify-self:end;text-align:right}
+.ttl h1{margin:0;font-family:var(--title);font-weight:700;font-size:clamp(30px,3.4vw,54px);line-height:1.15;letter-spacing:.005em;text-transform:uppercase;color:var(--ink)}
+.ttl hr{border:0;border-top:1px solid var(--ink);margin:clamp(14px,1.6vw,24px) 0 0}
+.sym{height:clamp(44px,4.6vw,70px);width:auto;fill:var(--ink);display:block}
+.lead{margin:0;max-width:30em;font-family:var(--sans);font-weight:300;font-size:clamp(16px,1.45vw,22px);line-height:1.55;color:var(--ink)}
+@media (max-width:760px){
+  .contact .txt{display:none}
+  .rot{width:clamp(120px,40vw,220px)}
+  .intro{grid-template-columns:1fr;gap:26px;justify-items:center}
+  .ttl{justify-self:center;text-align:center}
+  .sym{height:30px}
+  .lead{justify-self:stretch;text-align:left}
+}
+@media (prefers-reduced-motion:reduce){.rot.off{visibility:hidden}
+.rot span{animation:none}.rot span:first-child{opacity:1}.hdr video{display:none}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <video autoplay muted loop playsinline preload="auto" aria-hidden="true" src="https://bleedvfx.github.io/portfolio/brand/header_bg.mp4" onerror="this.remove()"></video>
+  <a class="brand" href="https://www.bleedvfx.com" target="_blank" rel="noopener"><svg class="logo" viewBox="0 0 1210.45 348.63" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="bleed"><path d="M0 0h48.34v141.36c17.330-22.22 43.7-36.87 83.5-36.87 66.65 0 117.68 48.83 117.68 120.85s-51.03 123.29-117.68 123.29c-39.79 0-66.16-14.650-83.5-36.87v31.98H0zm125.98 305.18c45.17 0 75.2-36.62 75.2-79.830s-30.03-77.39-75.2-77.39-77.39 34.18-77.39 77.39 32.23 79.83 77.39 79.83"/><path d="M355.22 343.75h-48.34V0h48.34z"/><path d="M533.45 104.49c68.36 0 112.79 50.78 112.79 113.53 0 7.32-.49 14.89-1.95 22.46H462.41c2.2 35.16 32.23 62.74 72.75 62.74 29.3 0 52.73-12.45 70.31-40.04l35.64 25.88c-21.73 39.06-64.45 59.57-105.96 59.57-70.8 0-122.8-52.25-122.8-121.83s50.05-122.31 121.09-122.31Zm63.72 99.86c-2.93-32.96-30.52-56.15-64.21-56.15-35.89 0-63.23 23.19-69.34 56.15h133.54Z"/><path d="M807.62 104.49c68.36 0 112.79 50.78 112.79 113.53 0 7.32-.49 14.89-1.95 22.46H736.58c2.2 35.160 32.23 62.74 72.75 62.74 29.3 0 52.73-12.45 70.31-40.04l35.64 25.88c-21.73 39.06-64.45 59.57-105.96 59.57-70.8 0-122.8-52.25-122.8-121.83s50.05-122.31 121.09-122.31Zm63.72 99.86c-2.93-32.96-30.52-56.15-64.21-56.15-35.89 0-63.23 23.19-69.34 56.15h133.54Z"/><path d="M1078.61 104.49c39.79 0 66.16 14.65 83.5 36.87V0h48.34v343.75h-48.34v-31.98c-17.33 22.22-43.7 36.87-83.5 36.87-66.65 0-117.68-51.27-117.68-123.29s51.030-120.85 117.68-120.85Zm-69.33 120.85c0 43.21 30.03 79.83 75.2 79.83s77.39-36.62 77.39-79.83-32.47-77.39-77.39-77.39-75.2 34.18-75.2 77.39"/></svg><span class="rot" aria-hidden="true"><span style="animation-delay:0s">creative studio</span><span style="animation-delay:3s">mesmerizing product shots</span><span style="animation-delay:6s">photoreal &amp; abstract imagery</span><span style="animation-delay:9s">direction &amp; production</span><span style="animation-delay:12s">food &amp; beverage visuals</span><span style="animation-delay:15s">product demo films</span><span style="animation-delay:18s">dynamic simulations</span><span style="animation-delay:21s">high-end vfx</span><span style="animation-delay:24s">hybrid pipelines</span><span style="animation-delay:27s">curiosity-driven CGI</span><span style="animation-delay:30s">product visualization</span><span style="animation-delay:33s">creative experimentation</span><span style="animation-delay:36s">visuals beyond the obvious</span><span style="animation-delay:39s">creative &amp; technical craft</span></span></a>
+  <div class="contact"><span class="txt">For more info about these or other projects contact</span><a href="mailto:lisa@bleedvfx.com">lisa@bleedvfx.com</a></div>
+</header>
+<section class="intro">
+  <div class="ttl"><h1>Food &amp; Beverage</h1><hr></div>
+  <svg class="sym" viewBox="0 0 316.91 632.35" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m73.84 374.55-34.18-34.18 99.96-99.96c-27.97 3.45-56.97-4.83-85.11-32.97C7.38 160.31 5.83 89.7 56.75 38.77c50.93-50.93 123.26-51.1 170.39-3.970 28.14 28.14 36.42 57.14 32.97 85.11l22.62-22.62 34.18 34.18L73.84 374.54ZM200.56 69.67c-31.94-31.94-79.07-27.28-109.62 3.28-30.56 30.56-33.49 75.96-1.55 107.9 31.76 31.76 78.89 30.56 109.45 0s33.66-79.24 1.73-111.180Z"/><path d="m243.07 257.8 34.18 34.18-99.96 99.96c27.97-3.45 56.97 4.83 85.11 32.97 47.13 47.13 48.68 117.74-2.24 168.66-50.93 50.93-123.26 51.1-170.39 3.97-28.14-28.14-36.43-57.14-32.97-85.11l-22.61 22.62L0 500.87zM116.35 562.67c31.94 31.94 79.07 27.28 109.62-3.28 30.56-30.56 33.49-75.96 1.55-107.9-31.76-31.76-78.89-30.56-109.45 0s-33.66 79.24-1.73 111.18Z"/></svg>
+  <p class="lead">Explore a selection of our food &amp; beverage projects for brands including Reese's, Wall's, Danone, Dove, and Lipton.</p>
+</section>
+<div id="grid"></div>
+<script>
+// Dónde viven los archivos. Versión final: 'https://bleedvfx.github.io/'
+const BASE = 'https://bleedvfx.github.io/';
+// Cada pieza: p = archivo (repo/carpeta/archivo), w/h = resolución nativa, v = es video, u = case en la web (si tiene)
+const ITEMS = [{"p": "web/reeses_puffs/step_and_repeat_dirstcut.mp4", "w": 1280, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/dove_stick/dove_004.jpg", "w": 1920, "h": 990, "v": false, "u": "https://www.bleedvfx.com/dovestick"}, {"p": "portfolio/media/milk_shots/milkshots_001_milkswirl_002.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/milk_shots__milkshots_001_milkswirl_002.jpg"}, {"p": "web/reeses_puffs/looping_swirl.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/walls_doodles/walls_thumbnail_1920x1080_0000.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/danone/danone_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/danone__danone_clip01.jpg"}, {"p": "portfolio/media/milk_shots/milkshots_001_milkswirl_001.mp4", "w": 1280, "h": 726, "v": true, "ps": "posters/milk_shots__milkshots_001_milkswirl_001.jpg"}, {"p": "web/dove_stick/dove_003_square.jpg", "w": 1080, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/dovestick"}, {"p": "web/walls_doodles/PH_Boom_Boom_v04_02_0080_edited.jpg", "w": 2134, "h": 2160, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/reeses_puffs/swirl_03_007_0000.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/reeses_puffs/F21_MoreYes_ANM_TB_Box_16_9_H264_ReesesPuffs_ENG.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/walls_doodles/Ph-Boom-Boom-V04.mp4", "w": 1280, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/walls_doodles/Walls_KV_04_op01_icecream01_edited.jpg", "w": 1675, "h": 3000, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/cofler_alfablock/clip01.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "web/reeses_puffs/RP_STC_CBS_FULL.jpg", "w": 3665, "h": 2289, "v": false, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "portfolio/media/quaker_08-06-20/quaker_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/quaker_08-06-20__quaker_clip01.jpg"}, {"p": "web/walls_doodles/PH_Boom_Boom_v04_0071_edited.jpg", "w": 645, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/dove_stick/dove_001.jpg", "w": 1496, "h": 1620, "v": false, "u": "https://www.bleedvfx.com/dovestick"}, {"p": "web/reeses_puffs/F21_MoreYes_VDO_B2B_9_16_H264_ReesesPuffs_ENG.mp4", "w": 720, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/cofler_alfablock/alfablock_thumbnail_1920x1080_02.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "web/walls_doodles/Solero_orange.mp4", "w": 1280, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/reeses_puffs/pixel_stretch_003_0029.jpg", "w": 1329, "h": 999, "v": false, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "portfolio/media/danone_cachaca/danone_cachaca_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/danone_cachaca__danone_cachaca_clip01.jpg"}, {"p": "web/cofler_alfablock/clip02.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "web/walls_doodles/Nogger_v04_0000.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/reeses_puffs/F21_MoreYes_VDO_SUN_1_1_H264_ReesesPuffs_ENG.mp4", "w": 1280, "h": 1280, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "web/walls_doodles/WALLS_sh_watermelon_v5.002_02.jpg", "w": 1920, "h": 1920, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/cofler_rellenos/Sh 030 003_encoded.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/cofler_rellenos__Sh_030_003_encoded.jpg"}, {"p": "web/reeses_puffs/reeses_puffs_colors.jpg", "w": 1938, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}, {"p": "portfolio/media/lipton_04-04-23/01 - kaleidoscope_v1.006_colorop03_feed.jpg", "w": 1080, "h": 1350, "v": false}, {"p": "portfolio/media/dutchlady/dutchlady_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/dutchlady__dutchlady_clip01.jpg"}, {"p": "web/walls_doodles/Walls_KV_04_op01_icecream02.jpg", "w": 3500, "h": 3500, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/cofler_alfablock/chocolate_bar_alfajor.jpg", "w": 1920, "h": 1080, "v": false, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "portfolio/media/chokis/chokis_thumbnail_1920x1080_web.jpg", "w": 1920, "h": 1080, "v": false}, {"p": "web/walls_doodles/Walls_KV_04_op01_icecream03_edited.jpg", "w": 1069, "h": 2174, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/corona_07-07-25/CORONA_sh010_v1.008_color01_encoded.mp4", "w": 1000, "h": 1000, "v": true, "ps": "posters/corona_07-07-25__CORONA_sh010_v1.008_color01_encoded.jpg"}, {"p": "web/walls_doodles/Walls_TK_BoomBoom_1-1_edited.jpg", "w": 1920, "h": 1920, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "web/cofler_alfablock/clip04.mp4", "w": 1080, "h": 972, "v": true, "u": "https://www.bleedvfx.com/cofleralfablock"}, {"p": "web/walls_doodles/walls_sh_watermelon_v3_edited_edited.jpg", "w": 1455, "h": 2751, "v": false, "u": "https://www.bleedvfx.com/wallsdoodles"}, {"p": "portfolio/media/cofler_rellenos/sh_050_005_encoded.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/cofler_rellenos__sh_050_005_encoded.jpg"}, {"p": "portfolio/media/aquafina/aquafina_clip01.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/aquafina__aquafina_clip01.jpg"}, {"p": "portfolio/media/chocolate_swirl/chocolate_swirl.mp4", "w": 1280, "h": 720, "v": true, "ps": "posters/chocolate_swirl__chocolate_swirl.jpg"}, {"p": "web/reeses_puffs/thumbs_up.mp4", "w": 1280, "h": 720, "v": true, "u": "https://www.bleedvfx.com/reesespuffsmoreyes"}];
+
+const grid = document.getElementById('grid');
+const io = ('IntersectionObserver' in window) ? new IntersectionObserver(es=>es.forEach(e=>{
+  const v=e.target; if(e.isIntersecting){ if(!v.src) v.src=v.dataset.src; v.play().catch(()=>{}); } else v.pause();
+}),{rootMargin:'300px 0px'}) : null;
+
+// Crear cada pieza una sola vez
+const els = ITEMS.map(it=>{
+  const a=document.createElement(it.u?'a':'div'); a.className='it';
+  if(it.u){ a.href=it.u; a.target='_blank'; a.rel='noopener'; } else a.classList.add('nolink');
+  const url=BASE+encodeURI(it.p);
+  let m;
+  if(it.v){ m=document.createElement('video'); m.muted=true; m.loop=true; m.playsInline=true;
+    m.setAttribute('muted',''); m.setAttribute('playsinline',''); m.preload='none';
+    m.poster=it.ps||url.replace(/\.mp4$/,'_firstframe.jpg'); m.dataset.src=url;
+    if(io) io.observe(m); else { m.src=m.dataset.src; m.autoplay=true; } }
+  else { m=document.createElement('img'); m.loading='lazy'; m.decoding='async'; m.alt=''; m.src=url; }
+  a.appendChild(m); return a;
+});
+
+// Grilla justificada: filas de alto parejo que llenan el ancho.
+// Tope: ninguna pieza se muestra a más de MAX_SCALE de su resolución nativa.
+const MAX_SCALE = 1.25;
+const MOBILE = 600;            // por debajo de este ancho: una pieza por fila
+function targetH(W){ return W<1000 ? 360 : Math.min(W*0.36, 640); }
+function layout(){
+  const cs=getComputedStyle(grid);
+  const W=grid.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+  const gap=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--gap'))||12;
+  const T=targetH(W);
+  const frag=document.createDocumentFragment();
+  let row=[], sumA=0;
+  const flush=(last)=>{
+    if(!row.length) return;
+    const free=W-gap*(row.length-1);
+    let h = last ? Math.min(T, free/sumA) : free/sumA;
+    const maxH=Math.min(...row.map(i=>ITEMS[i].h))*MAX_SCALE;   // tope de escala
+    h=Math.min(h,maxH);
+    const r=document.createElement('div'); r.className='row';
+    row.forEach(i=>{ const it=ITEMS[i], e=els[i];
+      e.style.width=Math.floor(h*it.w/it.h)+'px'; e.style.height=Math.floor(h)+'px'; r.appendChild(e); });
+    frag.appendChild(r); row=[]; sumA=0;
+  };
+  ITEMS.forEach((it,i)=>{
+    row.push(i); sumA+=it.w/it.h;
+    if(W<MOBILE || (W-gap*(row.length-1))/sumA <= T) flush(false);
+  });
+  flush(true);
+  grid.replaceChildren(frag);
+}
+let t; addEventListener('resize',()=>{ clearTimeout(t); t=setTimeout(layout,120); });
+layout();
+
+// Si el carrete de textos se acerca al contacto, se oculta
+const rot=document.querySelector('.rot'), contact=document.querySelector('.contact');
+function fitRot(){ if(!rot||!contact) return; rot.classList.remove('off');
+  const a=rot.getBoundingClientRect(), b=contact.getBoundingClientRect();
+  if(a.right > b.left-24) rot.classList.add('off'); }
+new ResizeObserver(fitRot).observe(document.querySelector('.hdr')); fitRot();
+</script>
+</body>
+</html>
